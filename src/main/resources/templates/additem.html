@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http//www.thymeleaf.org" layout:decorate="main_layout.html">
+<div layout:fragment="mysitecontent">
+
+    <form th:action="@{'/additem-v2'}" method="post">
+        <div class="row">
+            <div class="col-12">
+                NAME:
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <input type="text" name="name" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                Price:
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <input type="number" name="price" class="form-control" value="0">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                Amount:
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <input type="text" name="amount" class="form-control" value="0">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                Url:
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <input type="text" name="urlValue" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                Coutry:
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <select class="form-select" name="country.id">
+                    <option th:each="cnt : ${countries}"
+                            th:text="${cnt.name + '-' + cnt.code}"
+                            th:value="${cnt.id}">
+
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <button class="btn btn-success">add</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
